@@ -9,51 +9,43 @@ uint8_t start=1;
 
 void Diod(int diod, int bit)
 {
-    // unsigned long port;
     unsigned int sbit=0;
     unsigned int rbit=0;
     if(diod==1)
     {
-        // port=GPIO_IDR_IDR_7;
         sbit=GPIO_BSRR_BS15;
         rbit=GPIO_BSRR_BR15;
     }
     else if(diod==2)
     {
-        // port=GPIO_IDR_IDR_8;
         sbit=GPIO_BSRR_BS13;
         rbit=GPIO_BSRR_BR13;
     }
     else if(diod==3)
     {
-        // port=GPIO_IDR_IDR_9;
         sbit=GPIO_BSRR_BS12;
         rbit=GPIO_BSRR_BR12;
     }
     else if(diod==4)
     {
-        // port=GPIO_IDR_IDR_9;
         sbit=GPIO_BSRR_BS10;
         rbit=GPIO_BSRR_BR10;
     }
     else if(diod==5)
     {
-        // port=GPIO_IDR_IDR_9;
         sbit=GPIO_BSRR_BS11;
         rbit=GPIO_BSRR_BR11;
     }
     else if(diod==6)
     {
-        // port=GPIO_IDR_IDR_9;
         sbit=GPIO_BSRR_BS0;
         rbit=GPIO_BSRR_BR0;
     }
-    // if(READ_BIT(GPIOC->IDR, port)!=0)
     if(bit==1)
     {
         if(diod==1)
         {
-            *(uint8_t*)(0x40020400UL+0x18UL)|=(0x1UL<<15);
+            *(uint32_t*)(0x40020400UL+0x18UL)|=(0x1UL<<15);
         }
         else
         {
@@ -64,7 +56,7 @@ void Diod(int diod, int bit)
     {
         if(diod==1)
         {
-            *(uint32_t)(0x40020400UL+0x18UL)|=(0x1UL<<31);
+            *(uint32_t*)(0x40020400UL+0x18UL)|=(0x1UL<<31);
         }
         else
         {
@@ -155,22 +147,17 @@ int main(void)
     GPIO_Ini();
     while(1)
     {
-        // if(flag==0)
-        // {
-            if(READ_BIT(GPIOC->IDR, GPIO_IDR_IDR_8)==0)
+        if(READ_BIT(GPIOC->IDR, GPIO_IDR_IDR_8)==0)
+        {
+            if(flag!=2)
             {
-                if(flag!=2)
-                {
                 flag=1;
-                }
-        // SET_BIT(GPIOB->BSRR, GPIO_BSRR_BS7); //Установка единицы в 7-ой бит регистра ODR
             }
-            else
-            {
-                flag=0;
-        // SET_BIT(GPIOB->BSRR, GPIO_BSRR_BR7); //Установка нуля в 7-ой бит регистра ODR
-            }
-        // }
+        }
+        else
+        {
+            flag=0;
+        }
         if(flag==1)
         {
             flag=2;

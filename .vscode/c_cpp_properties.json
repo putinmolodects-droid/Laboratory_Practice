@@ -3,13 +3,21 @@
     {
       "name": "windows-gcc-x64",
       "includePath": [
-        "${workspaceFolder}/**"
+        // "C:/Users/Lenovo Legion/Desktop/Laboratory_Practice-main/Laboratory_Practice/Tools/xpack-arm-none-eabi-gcc-13.2.1-1.1/arm-none-eabi/include",
+       "${workspaceFolder}/**",
+      //  "C:/Users/Lenovo Legion/Desktop/Laboratory_Practice-main/Laboratory_Practice",
+      //  "C:/MK/Tools/xpack-arm-none-eabi-gcc-13.2.1-1.1",
+      //  "C:/Users/Lenovo Legion/Desktop/Laboratory_Practice-main",
+      //  "C:/Users/Lenovo Legion/Desktop/Laboratory_Practice-main/Laboratory_Practice/CMSIS/Devices/STM32F4xx/Inc",
+      // "C:/Users/Lenovo Legion/Desktop/Laboratory_Practice-main/Laboratory_Practice/CMSIS/Devices/STM32F4xx/Inc/STM32F429xx/stm32f429xx.h"
       ],
       "defines": [
         "_DEBUG",
         "UNICODE",
         "_UNICODE",
-        "STM32F429xx"
+        "STM32F429xx",
+        "Tools",
+        "include"
       ],
       "compilerPath": "gcc",
       "cStandard": "${default}",

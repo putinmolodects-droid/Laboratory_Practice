@@ -1,4 +1,5 @@
 build_F429ZI/main.o: Core/Src/main.c Core/Inc/init.h \
+ C:/Users/Lenovo\ Legion/Desktop/Laboratory_Practice-main/Laboratory_Practice/Tools/xpack-arm-none-eabi-gcc-13.2.1-1.1/arm-none-eabi/include/stdint.h \
  Core/Inc/../../CMSIS/Devices/STM32F4xx/Inc/stm32f4xx.h \
  CMSIS/Devices/STM32F4xx/Inc/STM32F429xx/stm32f429xx.h \
  CMSIS/Include/../include/core_cm4.h \
@@ -9,6 +10,7 @@ build_F429ZI/main.o: Core/Src/main.c Core/Inc/init.h \
  CMSIS/Devices/STM32F4xx/Inc/system_stm32f4xx.h \
  Core/Inc/../../CMSIS/Devices/STM32F4xx/Inc/STM32F429xx/stm32f429xx.h
 Core/Inc/init.h:
+C:/Users/Lenovo\ Legion/Desktop/Laboratory_Practice-main/Laboratory_Practice/Tools/xpack-arm-none-eabi-gcc-13.2.1-1.1/arm-none-eabi/include/stdint.h:
 Core/Inc/../../CMSIS/Devices/STM32F4xx/Inc/stm32f4xx.h:
 CMSIS/Devices/STM32F4xx/Inc/STM32F429xx/stm32f429xx.h:
 CMSIS/Include/../include/core_cm4.h:
